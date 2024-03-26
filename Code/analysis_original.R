@@ -2,7 +2,6 @@ args=(commandArgs(TRUE))
 if(length(args)==0){
   print("No arguments supplied.")
 } else{
-  i = as.integer(args[2])
   k = as.integer(args[1])
   }
 
@@ -95,12 +94,12 @@ DESeq.res <- DESeq2.func(readCount = readCount.win, conditions, part = paste0(fi
 edgeR.res <- edgeR.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt93.'), outdir = outdir0)
 
 readCount.win <- winsor.fun(Y = readCount, X = conditions, quan = 0.95)
-DESeq.res <- DESeq2.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt95.',i), outdir = outdir0)
-edgeR.res <- edgeR.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt95.',i), outdir = outdir0)
+DESeq.res <- DESeq2.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt95.'), outdir = outdir0)
+edgeR.res <- edgeR.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt95.'), outdir = outdir0)
 
 readCount.win <- winsor.fun(Y = readCount, X = conditions, quan = 0.97)
-DESeq.res <- DESeq2.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt97.',i), outdir = outdir0)
-edgeR.res <- edgeR.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt97.',i), outdir = outdir0)
+DESeq.res <- DESeq2.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt97.'), outdir = outdir0)
+edgeR.res <- edgeR.func(readCount = readCount.win, conditions, part = paste0(filename,'-winsor.qt97.'), outdir = outdir0)
 
 
 
